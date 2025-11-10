@@ -3887,7 +3887,10 @@ body {
 /* ========================================
    SEÇÃO DE INSTAGRAM
    ======================================== */
-
+.section-title {
+    /* Define cor do texto como branco */
+    color: #FFFFFF;
+}
 /* Estilo da seção de Instagram */
 .instagram-section {
     /* Define cor de fundo como preto */
