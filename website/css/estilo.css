@@ -3884,3 +3884,94 @@ body {
         width: 100%;
     }
 }
+/* ========================================
+   SEÇÃO DE INSTAGRAM
+   ======================================== */
+
+/* Estilo da seção de Instagram */
+.instagram-section {
+    /* Define cor de fundo como preto */
+    background-color: #000000;
+    
+    /* Define cor do texto como branco */
+    color: #FFFFFF;
+    
+    /* Adiciona espaçamento interno vertical */
+    padding: 60px 20px;
+}
+/* Estilo do container dentro da seção de Instagram */
+.instagram-section .container {
+    /* Organiza elementos em coluna */
+    flex-direction: column;
+    
+    /* Centraliza elementos */
+    align-items: center;
+    
+    /* Define espaçamento entre elementos */
+    gap: 20px;
+}
+
+/* Estilo do subtítulo da seção de Instagram */
+.instagram-subtitle {
+    /* Define tamanho da fonte */
+    font-size: 18px;
+    
+    /* Define cor como branco */
+    color: #FFFFFF;
+    
+    /* Centraliza o texto */
+    text-align: center;
+    
+    /* Define largura máxima */
+    max-width: 600px;
+}
+/* Estilo do botão de Instagram */
+.instagram-button {
+    /* Define cor de fundo como gradiente (rosa do Instagram) */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    
+    /* Define cor do texto como branco */
+    color: #FFFFFF;
+    
+    /* Remove a decoração padrão de links */
+    text-decoration: none;
+    
+    /* Adiciona espaçamento interno */
+    padding: 15px 40px;
+    
+    /* Define tamanho da fonte */
+    font-size: 18px;
+    
+    /* Define peso da fonte */
+    font-weight: bold;
+    
+    /* Adiciona borda arredondada */
+    border-radius: 5px;
+    
+    /* Define transição suave para hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Exibe como bloco inline para funcionar como botão */
+    display: inline-block;
+    
+    /* Adiciona sombra */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+/* Efeito ao passar o mouse sobre o botão de Instagram */
+.instagram-button:hover {
+    /* Aumenta o botão levemente */
+    transform: scale(1.08);
+    
+    /* Aumenta a sombra */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsividade para o botão de Instagram */
+@media (max-width: 480px) {
+    /* Botão em largura total em mobile */
+    .instagram-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
