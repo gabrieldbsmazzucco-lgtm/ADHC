@@ -754,7 +754,9 @@ body {
 /* ========================================
    SEÇÃO DE PATROCINADORES
    ======================================== */
-
+.sponsors-section .section-title{
+color: #FFFFFF;
+}
 /* Estilo da seção de patrocinadores */
 .sponsors-section {
     /* Define cor de fundo como preto */
