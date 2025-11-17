@@ -29,32 +29,6 @@ function ativarLinkNavegacao() {
     });
 }
 
-/* ========================================
-   FUNÇÃO: Adicionar efeito de hover aos cards de informação
-   Descrição: Esta função adiciona um efeito visual quando o usuário
-   passa o mouse sobre os cards de informação, melhorando a interatividade.
-   ======================================== */
-function adicionarEfeitosHoverCards() {
-    // Obtém todos os cards de informação
-    const cards = document.querySelectorAll('.info-card');
-    
-    // Itera sobre cada card
-    cards.forEach(card => {
-        // Adiciona evento de mouse enter (ao passar o mouse)
-        card.addEventListener('mouseenter', function() {
-            // Adiciona uma classe para aplicar estilos de hover
-            this.style.backgroundColor = '#FFD700';
-            this.style.color = '#000000';
-        });
-        
-        // Adiciona evento de mouse leave (ao sair do mouse)
-        card.addEventListener('mouseleave', function() {
-            // Remove os estilos de hover
-            this.style.backgroundColor = '#FFFFFF';
-            this.style.color = '#000000';
-        });
-    });
-}
 
 /* ========================================
    FUNÇÃO: Animar elementos ao entrar na viewport
@@ -97,55 +71,9 @@ function adicionarAnimacaoScroll() {
     });
 }
 
-/* ========================================
-   FUNÇÃO: Adicionar interatividade aos cards de notícia
-   Descrição: Esta função adiciona efeitos de hover aos cards de notícia,
-   melhorando a experiência do usuário ao interagir com as notícias.
-   ======================================== */
-function adicionarEfeitosNewsCards() {
-    // Obtém todos os cards de notícia
-    const newsCards = document.querySelectorAll('.news-card');
-    
-    // Itera sobre cada card de notícia
-    newsCards.forEach(card => {
-        // Adiciona evento de mouse enter (ao passar o mouse)
-        card.addEventListener('mouseenter', function() {
-            // Aumenta a opacidade do card
-            this.style.opacity = '1';
-        });
-        
-        // Adiciona evento de mouse leave (ao sair do mouse)
-        card.addEventListener('mouseleave', function() {
-            // Restaura a opacidade normal
-            this.style.opacity = '1';
-        });
-    });
-}
 
-/* ========================================
-   FUNÇÃO: Adicionar interatividade aos cards de patrocinador
-   Descrição: Esta função adiciona efeitos visuais aos cards de patrocinador,
-   criando uma experiência mais interativa para o usuário.
-   ======================================== */
-function adicionarEfeitosSponsorCards() {
-    // Obtém todos os cards de patrocinador
-    const sponsorCards = document.querySelectorAll('.sponsor-card');
-    
-    // Itera sobre cada card de patrocinador
-    sponsorCards.forEach(card => {
-        // Adiciona evento de mouse enter (ao passar o mouse)
-        card.addEventListener('mouseenter', function() {
-            // Aumenta a opacidade do card
-            this.style.opacity = '1';
-        });
-        
-        // Adiciona evento de mouse leave (ao sair do mouse)
-        card.addEventListener('mouseleave', function() {
-            // Restaura a opacidade normal
-            this.style.opacity = '1';
-        });
-    });
-}
+
+
 
 /* ========================================
    FUNÇÃO: Adicionar efeito suave ao botão CTA
@@ -195,13 +123,13 @@ function inicializar() {
     ativarLinkNavegacao();
     
     // Adiciona efeitos de hover aos cards de informação
-    adicionarEfeitosHoverCards();
+    // adicionarEfeitosHoverCards();
     
     // Adiciona efeitos aos cards de notícia
-    adicionarEfeitosNewsCards();
+    // adicionarEfeitosNewsCards();
     
     // Adiciona efeitos aos cards de patrocinador
-    adicionarEfeitosSponsorCards();
+    // adicionarEfeitosSponsorCards();
     
     // Adiciona animações ao fazer scroll
     adicionarAnimacaoScroll();
@@ -252,33 +180,6 @@ function ativarLinkNavegacao() {
     });
 }
 
-/* ========================================
-   FUNÇÃO: Adicionar Efeitos Hover às Imagens
-   Adiciona animação ao passar o mouse
-   ======================================== */
-
-function adicionarEfeitosHoverImagens() {
-    /* Seleciona todas as imagens de elenco */
-    const rosterImages = document.querySelectorAll('.roster-image');
-    
-    /* Itera sobre cada imagem */
-    rosterImages.forEach(image => {
-
-        /* Adiciona evento de mouse enter */
-        image.addEventListener('mouseenter', function() {
-            /* Adiciona efeito visual */
-            this.style.transform = 'scale(1.02)';
-            this.style.boxShadow = '0 8px 20px rgba(255, 215, 0, 0.3)';
-        });
-        
-        /* Adiciona evento de mouse leave */
-        image.addEventListener('mouseleave', function() {
-            /* Remove o efeito visual */
-            this.style.transform = 'scale(1)';
-            this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-        });
-    });
-}
 
 /* ========================================
    FUNÇÃO: Adicionar Animação ao Fazer Scroll
@@ -411,86 +312,6 @@ function ativarLinkNavegacao() {
     });
 }
 
-/* ========================================
-   FUNÇÃO: Adicionar Efeitos Hover aos Cards de Jogo
-   Adiciona animações ao passar o mouse
-   ======================================== */
-
-function adicionarEfeitosHoverGameCards() {
-    /* Seleciona todos os cards de jogo */
-    const gameCards = document.querySelectorAll('.game-card');
-    
-    /* Itera sobre cada card */
-    gameCards.forEach(card => {
-        /* Adiciona evento de mouse enter */
-        card.addEventListener('mouseenter', function() {
-            /* Adiciona classe para efeito visual */
-            this.style.transform = 'translateY(-8px)';
-            this.style.boxShadow = '0 8px 16px rgba(255, 215, 0, 0.3)';
-        });
-        
-        /* Adiciona evento de mouse leave */
-        card.addEventListener('mouseleave', function() {
-            /* Remove o efeito visual */
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-        });
-    });
-}
-
-/* ========================================
-   FUNÇÃO: Adicionar Efeitos Hover aos Cards de Resultado
-   Adiciona animações ao passar o mouse
-   ======================================== */
-
-function adicionarEfeitosHoverResultCards() {
-    /* Seleciona todos os cards de resultado */
-    const resultCards = document.querySelectorAll('.result-card');
-    
-    /* Itera sobre cada card */
-    resultCards.forEach(card => {
-        /* Adiciona evento de mouse enter */
-        card.addEventListener('mouseenter', function() {
-            /* Adiciona classe para efeito visual */
-            this.style.transform = 'translateY(-5px)';
-            this.style.boxShadow = '0 8px 16px rgba(255, 215, 0, 0.2)';
-        });
-        
-        /* Adiciona evento de mouse leave */
-        card.addEventListener('mouseleave', function() {
-            /* Remove o efeito visual */
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-        });
-    });
-}
-
-/* ========================================
-   FUNÇÃO: Adicionar Efeitos Hover aos Cards de Notícia
-   Adiciona animações ao passar o mouse
-   ======================================== */
-
-function adicionarEfeitosHoverNewsCards() {
-    /* Seleciona todos os cards de notícia */
-    const newsCards = document.querySelectorAll('.news-card');
-    
-    /* Itera sobre cada card */
-    newsCards.forEach(card => {
-        /* Adiciona evento de mouse enter */
-        card.addEventListener('mouseenter', function() {
-            /* Adiciona classe para efeito visual */
-            this.style.transform = 'translateY(-8px)';
-            this.style.boxShadow = '0 8px 16px rgba(255, 215, 0, 0.3)';
-        });
-        
-        /* Adiciona evento de mouse leave */
-        card.addEventListener('mouseleave', function() {
-            /* Remove o efeito visual */
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-        });
-    });
-}
 
 /* ========================================
    FUNÇÃO: Adicionar Animação ao Fazer Scroll
@@ -1151,68 +972,6 @@ function adicionarAnimacaoScroll() {
     });
 }
 
-/* ========================================
-   FUNÇÃO: Adicionar efeitos hover nos cards
-   Descrição: Adiciona interatividade aos cards da página,
-   permitindo efeitos visuais ao passar o mouse.
-   ======================================== */
-function adicionarEfeitosHoverCards() {
-    // Seleciona todos os cards de audience
-    const audienceCards = document.querySelectorAll('.audience-card');
-    
-    // Adiciona efeito hover a cada card de audience
-    audienceCards.forEach(card => {
-        // Evento ao passar o mouse (mouseenter)
-        card.addEventListener('mouseenter', function() {
-            // Adiciona sombra ao card
-            this.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.3)';
-        });
-        
-        // Evento ao sair do mouse (mouseleave)
-        card.addEventListener('mouseleave', function() {
-            // Remove a sombra extra
-            this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
-        });
-    });
-    
-    // Seleciona todos os cards de benefício
-    const benefitItems = document.querySelectorAll('.benefit-item');
-    
-    // Adiciona efeito hover a cada card de benefício
-    benefitItems.forEach(item => {
-        // Evento ao passar o mouse
-        item.addEventListener('mouseenter', function() {
-            // Muda a cor de fundo
-            this.style.backgroundColor = 'rgba(255, 215, 0, 0.1)';
-        });
-        
-        // Evento ao sair do mouse
-        item.addEventListener('mouseleave', function() {
-            // Volta à cor original
-            this.style.backgroundColor = 'var(--cor-fundo)';
-        });
-    });
-    
-    // Seleciona todos os cards de ODS
-    const odsCards = document.querySelectorAll('.ods-card');
-    
-    // Adiciona efeito hover a cada card de ODS
-    odsCards.forEach(card => {
-        // Evento ao passar o mouse
-        card.addEventListener('mouseenter', function() {
-            // Adiciona sombra e muda background
-            this.style.boxShadow = '0 8px 20px rgba(255, 215, 0, 0.3)';
-            this.style.backgroundColor = 'rgba(255, 215, 0, 0.05)';
-        });
-        
-        // Evento ao sair do mouse
-        card.addEventListener('mouseleave', function() {
-            // Remove efeitos
-            this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
-            this.style.backgroundColor = 'var(--cor-terciaria)';
-        });
-    });
-}
 
 /* ========================================
    FUNÇÃO: Adicionar efeito ao botão CTA
@@ -1352,22 +1111,41 @@ function adicionarEfeitoBrilho(seletor) {
         elemento.classList.add('glow-text');
     });
 }
-
-/* FUNÇÃO: Inicializar as Novas Animações */
-function inicializarNovasAnimacoes() {
-    // Ativar a animação de deslize lateral para elementos com a classe 'slide-in-left'
-    adicionarAnimacaoSlideIn();
-
-    // Aplica o efeito de pulso a um elemento específico
-    ativarEfeitoPulso('.logo')
-
     
-    // Adicionar rotação ao passar o mouse no mascote
+    /* ========================================
+   FUNÇÕES DE INICIALIZAÇÃO POR PÁGINA (NOVAS)
+   ======================================== */
+
+function inicializarIndex() {
+    // Animações específicas para a página principal
+    adicionarAnimacaoScroll();
+    adicionarEfeitoBotaoCTA();
     adicionarEfeitoRotacao('.mascote-img'); 
-
     adicionarEfeitoRotacao('.sponsor-card'); 
-    
-    // Adicionar brilho ao título principal
     adicionarEfeitoBrilho('.hero-title');
 }
 
+function inicializarElenco() {
+    // Animações específicas para a página de elenco
+    // CORREÇÃO: Esta chamada resolve o problema das fotos invisíveis
+    adicionarAnimacaoSlideIn();
+}
+
+/* ========================================
+   FUNÇÃO PRINCIPAL DE INICIALIZAÇÃO (REESTRUTURADA)
+   ======================================== */
+function inicializar() {
+    ativarLinkNavegacao();
+    ativarEfeitoPulso('.logo')
+    adicionarEfeitoBrilho('.hero-title')
+    // Lógica de Roteamento: Verifica a URL para saber qual página inicializar
+    const paginaAtual = window.location.pathname.split('/').pop() || 'index.html';
+    
+    if (paginaAtual === 'index.html' || paginaAtual === '') {
+        inicializarIndex();
+    } else if (paginaAtual === 'elenco.html') {
+        inicializarElenco();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', inicializar);
