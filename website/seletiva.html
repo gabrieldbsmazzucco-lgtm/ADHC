@@ -38,7 +38,7 @@
                 <!-- Formulário de inscrição -->
                 <!-- Atributo action: URL do Formspree para enviar dados -->
                 <!-- Atributo method: POST envia os dados de forma segura -->
-                <form id="seletiva-form" class="form" action="https://formspree.io/f/xyzlggka" method="POST">
+                <form id="seletiva-form" class="form" action="https://formspree.io/f/xyzlggka" method="POST" novalidate>
                     <!-- Campo de nome -->
                     <div class="form-group">
                         <label for="nome" class="form-label">Nome Completo *</label>
@@ -48,7 +48,6 @@
                             name="nome" 
                             class="form-input" 
                             placeholder="Digite seu nome completo"
-                            required
                         >
                         <span class="error-message" id="erro-nome"></span>
                     </div>
@@ -62,7 +61,6 @@
                             name="email" 
                             class="form-input" 
                             placeholder="seu.email@exemplo.com"
-                            required
                         >
                         <span class="error-message" id="erro-email"></span>
                     </div>
@@ -76,7 +74,6 @@
                             name="telefone" 
                             class="form-input" 
                             placeholder="(XX) XXXXX-XXXX"
-                            required
                         >
                         <span class="error-message" id="erro-telefone"></span>
                     </div>
@@ -92,7 +89,6 @@
                             placeholder="Digite sua idade"
                             min="1"
                             max="120"
-                            required
                         >
                         <span class="error-message" id="erro-idade"></span>
                     </div>
@@ -100,7 +96,7 @@
                     <!-- Campo de posição -->
                     <div class="form-group">
                         <label for="posicao" class="form-label">Posição no Handebol *</label>
-                        <select id="posicao" name="posicao" class="form-input" required>
+                        <select id="posicao" name="posicao" class="form-input">
                             <option value="">Selecione uma posição</option>
                             <option value="goleiro">Goleiro</option>
                             <option value="lateral-esquerdo">Armador Esquerdo</option>
@@ -116,7 +112,7 @@
                     <!-- Campo de experiência -->
                     <div class="form-group">
                         <label for="experiencia" class="form-label">Experiência em Handebol *</label>
-                        <select id="experiencia" name="experiencia" class="form-input" required>
+                        <select id="experiencia" name="experiencia" class="form-input">
                             <option value="">Selecione uma opção</option>
                             <option value="iniciante">Iniciante</option>
                             <option value="intermediario">Intermediário</option>
@@ -144,7 +140,6 @@
                             id="termos" 
                             name="termos" 
                             class="form-checkbox"
-                            required
                         >
                         <label for="termos" class="checkbox-label">Concordo com os termos e condições *</label>
                         <span class="error-message" id="erro-termos"></span>
