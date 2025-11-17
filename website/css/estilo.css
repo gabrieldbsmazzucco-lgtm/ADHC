@@ -754,9 +754,7 @@ body {
 /* ========================================
    SEÇÃO DE PATROCINADORES
    ======================================== */
-.sponsors-section .section-title{
-color: #FFFFFF;
-}
+
 /* Estilo da seção de patrocinadores */
 .sponsors-section {
     /* Define cor de fundo como preto */
@@ -781,6 +779,9 @@ color: #FFFFFF;
     gap: 20px;
 }
 
+.sponsors-section .section-title{
+color: #FFFFFF;
+}
 /* Estilo do subtítulo de patrocinadores */
 .sponsors-subtitle {
     /* Define tamanho da fonte */
@@ -3979,4 +3980,62 @@ body {
         width: 100%;
         text-align: center;
     }
+}
+
+/* ========================================
+   NOVAS ANIMAÇÕES CSS PARA JAVASCRIPT (INTEGRAÇÃO)
+   ======================================== */
+
+/* 1. Efeito de Pulso (Pulse Effect) */
+/* Usado para destacar elementos importantes, como o logo ou um ícone */
+.pulse {
+    animation: pulse-animation 1.5s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); /* Amarelo (#FFD700) com transparência */
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(255, 215, 0, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+    }
+}
+
+/* 2. Efeito de Deslize Lateral (Slide-In Effect) */
+/* Usado para fazer elementos entrarem pela lateral, como um menu ou um modal */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 3. Efeito de Rotação Suave (Spin Effect) */
+/* Usado para ícones ou elementos decorativos que precisam de atenção */
+.spin-on-hover {
+    transition: transform 0.5s ease-in-out;
+}
+
+.spin-on-hover:hover {
+    transform: rotate(360deg);
+}
+
+/* 4. Efeito de Brilho (Glow Effect) */
+/* Usado para botões ou textos importantes */
+.glow-text {
+    transition: text-shadow 0.3s ease;
+}
+
+.glow-text:hover {
+    text-shadow: 0 0 8px #FFD700, 0 0 15px #FFD700;
 }
