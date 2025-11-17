@@ -972,6 +972,68 @@ function adicionarAnimacaoScroll() {
     });
 }
 
+/* ========================================
+   FUNÇÃO: Adicionar efeitos hover nos cards
+   Descrição: Adiciona interatividade aos cards da página,
+   permitindo efeitos visuais ao passar o mouse.
+   ======================================== */
+function adicionarEfeitosHoverCards() {
+    // Seleciona todos os cards de audience
+    const audienceCards = document.querySelectorAll('.audience-card');
+    
+    // Adiciona efeito hover a cada card de audience
+    audienceCards.forEach(card => {
+        // Evento ao passar o mouse (mouseenter)
+        card.addEventListener('mouseenter', function() {
+            // Adiciona sombra ao card
+            this.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.3)';
+        });
+        
+        // Evento ao sair do mouse (mouseleave)
+        card.addEventListener('mouseleave', function() {
+            // Remove a sombra extra
+            this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+        });
+    });
+    
+    // Seleciona todos os cards de benefício
+    const benefitItems = document.querySelectorAll('.benefit-item');
+    
+    // Adiciona efeito hover a cada card de benefício
+    benefitItems.forEach(item => {
+        // Evento ao passar o mouse
+        item.addEventListener('mouseenter', function() {
+            // Muda a cor de fundo
+            this.style.backgroundColor = 'rgba(255, 215, 0, 0.1)';
+        });
+        
+        // Evento ao sair do mouse
+        item.addEventListener('mouseleave', function() {
+            // Volta à cor original
+            this.style.backgroundColor = 'var(--cor-fundo)';
+        });
+    });
+    
+    // Seleciona todos os cards de ODS
+    const odsCards = document.querySelectorAll('.ods-card');
+    
+    // Adiciona efeito hover a cada card de ODS
+    odsCards.forEach(card => {
+        // Evento ao passar o mouse
+        card.addEventListener('mouseenter', function() {
+            // Adiciona sombra e muda background
+            this.style.boxShadow = '0 8px 20px rgba(255, 215, 0, 0.3)';
+            this.style.backgroundColor = 'rgba(255, 215, 0, 0.05)';
+        });
+        
+        // Evento ao sair do mouse
+        card.addEventListener('mouseleave', function() {
+            // Remove efeitos
+            this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+            this.style.backgroundColor = 'var(--cor-terciaria)';
+        });
+    });
+}
 
 /* ========================================
    FUNÇÃO: Adicionar efeito ao botão CTA
@@ -1111,41 +1173,20 @@ function adicionarEfeitoBrilho(seletor) {
         elemento.classList.add('glow-text');
     });
 }
-    
-    /* ========================================
-   FUNÇÕES DE INICIALIZAÇÃO POR PÁGINA (NOVAS)
-   ======================================== */
 
-function inicializarIndex() {
-    // Animações específicas para a página principal
-    adicionarAnimacaoScroll();
-    adicionarEfeitoBotaoCTA();
+/* FUNÇÃO: Inicializar as Novas Animações */
+function inicializarNovasAnimacoes() {
+    // Ativar a animação de deslize lateral para elementos com a classe 'slide-in-left'
+    adicionarAnimacaoSlideIn();
+
+    // Aplica o efeito de pulso a um elemento específico
+    ativarEfeitoPulso('.logo')
+
+    // Adicionar rotação ao passar o mouse no mascote
     adicionarEfeitoRotacao('.mascote-img'); 
+
     adicionarEfeitoRotacao('.sponsor-card'); 
+    
+    // Adicionar brilho ao título principal
     adicionarEfeitoBrilho('.hero-title');
 }
-
-function inicializarElenco() {
-    // Animações específicas para a página de elenco
-    // CORREÇÃO: Esta chamada resolve o problema das fotos invisíveis
-    adicionarAnimacaoSlideIn();
-}
-
-/* ========================================
-   FUNÇÃO PRINCIPAL DE INICIALIZAÇÃO (REESTRUTURADA)
-   ======================================== */
-function inicializar() {
-    ativarLinkNavegacao();
-    ativarEfeitoPulso('.logo')
-    adicionarEfeitoBrilho('.hero-title')
-    // Lógica de Roteamento: Verifica a URL para saber qual página inicializar
-    const paginaAtual = window.location.pathname.split('/').pop() || 'index.html';
-    
-    if (paginaAtual === 'index.html' || paginaAtual === '') {
-        inicializarIndex();
-    } else if (paginaAtual === 'elenco.html') {
-        inicializarElenco();
-    }
-}
-
-document.addEventListener('DOMContentLoaded', inicializar);
