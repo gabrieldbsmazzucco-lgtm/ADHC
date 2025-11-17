@@ -1122,7 +1122,6 @@ document.addEventListener('DOMContentLoaded', inicializar);
    ======================================== */
 
 /* 1. FUNÇÃO: Ativar Efeito de Pulso (Pulse Effect) */
-/* Aplica o efeito de pulso a um elemento específico (ex: logo) */
 function ativarEfeitoPulso(seletor) {
     const elemento = document.querySelector(seletor);
     if (elemento) {
@@ -1131,23 +1130,17 @@ function ativarEfeitoPulso(seletor) {
 }
 
 /* 2. FUNÇÃO: Animação de Deslize Lateral (Slide-In Effect) */
-/* Usa IntersectionObserver para fazer elementos deslizarem da esquerda ao entrar na viewport */
 function adicionarAnimacaoSlideIn() {
-    // Seleciona todos os elementos que devem ter o efeito de deslize lateral
-    // Adicione a classe 'slide-in-left' no HTML para usar esta animação
     const elementosSlideIn = document.querySelectorAll('.slide-in-left');
     
     const observadorSlideIn = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Adiciona a classe 'active' para iniciar a transição CSS
                 entry.target.classList.add('active');
-                // Para de observar após a animação
                 observadorSlideIn.unobserve(entry.target);
             }
         });
     }, {
-        // Ativa a animação quando o elemento estiver 10% visível
         threshold: 0.1 
     });
     
@@ -1157,7 +1150,6 @@ function adicionarAnimacaoSlideIn() {
 }
 
 /* 3. FUNÇÃO: Adicionar Efeito de Rotação (Spin Effect) */
-/* Aplica o efeito de rotação ao passar o mouse em elementos (ex: ícones) */
 function adicionarEfeitoRotacao(seletor) {
     const elementos = document.querySelectorAll(seletor);
     elementos.forEach(elemento => {
@@ -1166,7 +1158,6 @@ function adicionarEfeitoRotacao(seletor) {
 }
 
 /* 4. FUNÇÃO: Adicionar Efeito de Brilho (Glow Effect) */
-/* Aplica o efeito de brilho ao passar o mouse em textos (ex: títulos) */
 function adicionarEfeitoBrilho(seletor) {
     const elementos = document.querySelectorAll(seletor);
     elementos.forEach(elemento => {
@@ -1176,17 +1167,25 @@ function adicionarEfeitoBrilho(seletor) {
 
 /* FUNÇÃO: Inicializar as Novas Animações */
 function inicializarNovasAnimacoes() {
-    // Ativar a animação de deslize lateral para elementos com a classe 'slide-in-left'
     adicionarAnimacaoSlideIn();
-
-    // Aplica o efeito de pulso a um elemento específico
-    ativarEfeitoPulso('.logo')
-
-    // Adicionar rotação ao passar o mouse no mascote
+    ativarEfeitoPulso('.logo');
     adicionarEfeitoRotacao('.mascote-img'); 
-
     adicionarEfeitoRotacao('.sponsor-card'); 
-    
-    // Adicionar brilho ao título principal
     adicionarEfeitoBrilho('.hero-title');
 }
+
+/* ========================================
+   FUNÇÃO: Inicializar todas as funcionalidades
+   ======================================== */
+function inicializar() {
+    ativarLinkNavegacao();
+    adicionarAnimacaoScroll();
+    adicionarEfeitoBotaoCTA();
+    inicializarNovasAnimacoes();
+    // Outras funções de inicialização específicas de cada página podem ser adicionadas aqui
+}
+
+/* ========================================
+   EVENTO: Executar inicialização quando a página carrega
+   ======================================== */
+document.addEventListener('DOMContentLoaded', inicializar);
