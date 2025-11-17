@@ -822,13 +822,17 @@ function validarFormulario(event) {
     const experiencia = document.getElementById('experiencia').value;
     const termos = document.getElementById('termos').checked;
     
-    // Variável para rastrear se há erros
+    // Variável para rastrear se há erros e o primeiro campo com erro
     let temErros = false;
+    let primeiroCampoComErro = null;
     
     // Valida nome
     if (!validarNome(nome)) {
         exibirErro('erro-nome', 'Nome deve ter pelo menos 3 caracteres e não pode conter números');
         temErros = true;
+        if (!primeiroCampoComErro) {
+            primeiroCampoComErro = document.getElementById('nome');
+        }
     } else {
         limparErro('erro-nome');
     }
@@ -837,6 +841,9 @@ function validarFormulario(event) {
     if (!validarEmail(email)) {
         exibirErro('erro-email', 'Email inválido. Use o formato: seu.email@exemplo.com');
         temErros = true;
+        if (!primeiroCampoComErro) {
+            primeiroCampoComErro = document.getElementById('email');
+        }
     } else {
         limparErro('erro-email');
     }
@@ -845,6 +852,9 @@ function validarFormulario(event) {
     if (!validarTelefone(telefone)) {
         exibirErro('erro-telefone', 'Telefone deve conter entre 10 e 11 dígitos');
         temErros = true;
+        if (!primeiroCampoComErro) {
+            primeiroCampoComErro = document.getElementById('telefone');
+        }
     } else {
         limparErro('erro-telefone');
     }
@@ -853,6 +863,9 @@ function validarFormulario(event) {
     if (!validarIdade(idade)) {
         exibirErro('erro-idade', 'Idade deve ser um número entre 1 e 120');
         temErros = true;
+        if (!primeiroCampoComErro) {
+            primeiroCampoComErro = document.getElementById('idade');
+        }
     } else {
         limparErro('erro-idade');
     }
@@ -861,6 +874,9 @@ function validarFormulario(event) {
     if (!validarPosicao(posicao)) {
         exibirErro('erro-posicao', 'Selecione uma posição');
         temErros = true;
+        if (!primeiroCampoComErro) {
+            primeiroCampoComErro = document.getElementById('posicao');
+        }
     } else {
         limparErro('erro-posicao');
     }
@@ -869,6 +885,9 @@ function validarFormulario(event) {
     if (!validarExperiencia(experiencia)) {
         exibirErro('erro-experiencia', 'Selecione seu nível de experiência');
         temErros = true;
+        if (!primeiroCampoComErro) {
+            primeiroCampoComErro = document.getElementById('experiencia');
+        }
     } else {
         limparErro('erro-experiencia');
     }
@@ -877,6 +896,9 @@ function validarFormulario(event) {
     if (!validarTermos(termos)) {
         exibirErro('erro-termos', 'Você deve concordar com os termos e condições');
         temErros = true;
+        if (!primeiroCampoComErro) {
+            primeiroCampoComErro = document.getElementById('termos');
+        }
     } else {
         limparErro('erro-termos');
     }
@@ -897,9 +919,28 @@ function validarFormulario(event) {
         }, 1000);
     }
     
+    // Se houver erros, rola para o primeiro campo com erro
+    if (temErros && primeiroCampoComErro) {
+        // Rola para o elemento pai (form-group) para melhor visualização
+        const formGroup = primeiroCampoComErro.closest('.form-group');
+        if (formGroup) {
+            formGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+            primeiroCampoComErro.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
     // Retorna false para não enviar o formulário duas vezes
     return false;
 }
+
+// Adiciona o event listener para o formulário
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('seletiva-form');
+    if (form) {
+        form.addEventListener('submit', validarFormulario);
+    }
+});
 
 /* ========================================
    FUNÇÃO: Exibir mensagem de sucesso
@@ -1246,3 +1287,4 @@ function inicializar() {
    inicializadas assim que o DOM estiver pronto para ser manipulado.
    ======================================== */
 document.addEventListener('DOMContentLoaded', inicializar);
+
