@@ -3983,11 +3983,10 @@ body {
 }
 
 /* ========================================
-   NOVAS ANIMAÇÕES CSS PARA JAVASCRIPT (INTEGRAÇÃO)
+   NOVAS ANIMAÇÕES CSS OTIMIZADAS (IMPLEMENTAÇÃO CORRIGIDA)
    ======================================== */
 
 /* 1. Efeito de Pulso (Pulse Effect) */
-/* Usado para destacar elementos importantes, como o logo ou um ícone */
 .pulse {
     animation: pulse-animation 1.5s infinite;
 }
@@ -3995,7 +3994,7 @@ body {
 @keyframes pulse-animation {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); /* Amarelo (#FFD700) com transparência */
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
     }
     70% {
         transform: scale(1.05);
@@ -4007,12 +4006,11 @@ body {
     }
 }
 
-/* 2. Efeito de Deslize Lateral (Slide-In Effect) */
-/* Usado para fazer elementos entrarem pela lateral, como um menu ou um modal */
+/* 2. Efeito de Deslize Lateral (Slide-In Effect) - CORRIGIDO E OTIMIZADO */
 .slide-in-left {
     opacity: 0;
-    transform: translateX(-100%);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .slide-in-left.active {
@@ -4021,7 +4019,6 @@ body {
 }
 
 /* 3. Efeito de Rotação Suave (Spin Effect) */
-/* Usado para ícones ou elementos decorativos que precisam de atenção */
 .spin-on-hover {
     transition: transform 0.5s ease-in-out;
 }
@@ -4031,7 +4028,6 @@ body {
 }
 
 /* 4. Efeito de Brilho (Glow Effect) */
-/* Usado para botões ou textos importantes */
 .glow-text {
     transition: text-shadow 0.3s ease;
 }
